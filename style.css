@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 100vw;
+    justify-content: center;
+    justify-items: center;
+    /* border: 10px solid blueviolet; */
+    margin-bottom: 50px;
+}
+
+h1{
+    padding: 10px;
+    font-size: 40px;
+    color: cadetblue;
+}
+#lista {
+    display: grid;
+    grid-template-columns: 10vw 10vw 10vw;
+    gap: 10px;
+    justify-content: center;
+    /* list-style: none; */
+}
+
