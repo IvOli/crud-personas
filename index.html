@@ -9,14 +9,38 @@
 </head>
 <body>
     <div class="container">
-        <h1>To-Do List</h1>
-        <form action="" onsubmit="dataIn(event)">
-            <input type="text" placeholder="Tarea" id="tarea">
-            <input type="submit" value="Enviar" onclick="dataIn(event)">
-        </form>
+        <div class="formulario">
+            <h1>Crud de Personas</h1>
+            <form action="" onsubmit="dataIn(event)" id="form">
+                <input type="text" placeholder="  Nombre" id="nombre" required>
+                <input type="number" placeholder="  Edad" id="edad">
+                <input type="text" placeholder="  Color de cabello" id="cabello">
+                <input type="text" placeholder="  Oficio" id="oficio">
+                <input type="text" placeholder="  Mascota favorita" id="mascota">
+                <input type="text" placeholder="  Hobby" id="hobby">
+                <input type="text" placeholder="  Pais de residencia" id="pais">
+                <input type="submit" value="Agregar" onclick="intruducirDatos(event)" class="submit">
+                
+            </form>
+        </div>
+        <table id="tablaGrande">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Color de cabello</th>
+                    <th>Oficio</th>
+                    <th>Mascota favorita</th>
+                    <th>Hobby</th>
+                    <th>Pais de residencia</th>
+                    <th>Acciones</th>
+                  </tr>
+            </thead>
+        </table>   
     </div>
     
-    <ul id="lista"></ul>
+
+       
 
     <script src="script.js"></script>
 </body>
