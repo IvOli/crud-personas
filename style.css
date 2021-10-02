@@ -68,6 +68,7 @@ input:focus{
 tr{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    
 }
 th, td{
     padding: 10px;
@@ -100,7 +101,6 @@ button{
 }
 
 .buttonEditar{
-    background-color: green;
     padding: 5px;
     border-radius: 40px;
     color: white;
@@ -111,7 +111,6 @@ button{
 }
 
 .buttonCancelar{
-    background-color: red;
     padding: 5px;
     border-radius: 40px;
     color: white;
@@ -126,7 +125,7 @@ button{
 }
 
 
-.btn-grad {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
+.btn-grad {background-image: linear-gradient(to right, #e52d27 0%, #b8b6b6  51%, #e52d27  100%)}
 .btn-grad {
    /* margin: 10px;
    padding: 15px 45px; */
@@ -146,7 +145,7 @@ button{
  }
 
 
- .btn-grad-edit {background-image: linear-gradient(to right, #348F50 0%, #56B4D3  51%, #348F50  100%)}
+ .btn-grad-edit {background-image: linear-gradient(to right, #348F50 0%, #3af562  51%, #348F50  100%)}
  .btn-grad-edit {
     /* margin: 10px;
     padding: 15px 45px;
@@ -156,7 +155,7 @@ button{
     background-size: 200% auto;
     color: white;            
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     display: block;
   }
 
@@ -173,3 +172,56 @@ button{
     right: 0;
     z-index: -1;
   }
+
+
+
+@media (max-width: 768px){
+   .container{
+      display: flex;
+      flex-direction: column;
+   }
+   h1{
+    margin-top: 20px;
+    font-size: 30px;
+    color: rgb(218, 216, 216);
+}
+   input{
+    width: 100%;
+    font-size: 10px;
+    padding: 5px 10px 5px 10px;
+}
+.submit {
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  th, td{
+    padding: 10px;
+    margin: .6vw;
+    width: 11vw;
+    height: 50px;
+    font-size: 10px;
+    /* border: none; */
+    overflow: hidden;
+}
+.buttonEditar{
+    padding: 0px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    width: 50%;
+    border: white solid .5px;
+    
+}
+
+.buttonCancelar{
+    padding: 0px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    width: 50%;
+    border: white solid .5px;
+}
+}
+

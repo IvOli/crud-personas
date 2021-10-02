@@ -146,8 +146,8 @@ let inicioPersonas = () => {
         tdMascotaFavorita.innerHTML = item.mascotaFavorita
         tdHobby.innerHTML = item.hobby
         tdPais.innerHTML = item.pais
-        buttonCancelar.innerHTML = "Delete"
-        buttonEditar.innerHTML = "Edit"
+        buttonCancelar.innerHTML = "❌"
+        buttonEditar.innerHTML = "🖊️"
     
         document.getElementById(newElement.id).appendChild(tdNombre);
         document.getElementById(newElement.id).appendChild(tdEdad);
