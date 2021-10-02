@@ -14,7 +14,6 @@ let intruducirDatos= (e)=>{
     let pais = document.getElementById("pais").value;
     
     if(nombre =='' || edad == '' || cabello == '' || oficio == '' || mascota == '' || hobby == '' || pais == ''){
-    // if(nombre ==''){
         alert("No puedes dejar campos vacios")
     }else{
         let dic = {
@@ -74,7 +73,7 @@ let inicioPersonas = () => {
         tdAccion.classList = "accion"
         let buttonCancelar = document.createElement("button");
         buttonCancelar.id = item.id
-        buttonCancelar.classList = "buttonCancelar"
+        buttonCancelar.classList = "buttonCancelar btn-grad"
         buttonCancelar.addEventListener("click", () => {
         let algo = document.getElementById(buttonCancelar.id).id
         let idCancelar = objPersona.findIndex(item => item.id == algo)
@@ -90,12 +89,13 @@ let inicioPersonas = () => {
         
         let buttonEditar = document.createElement("button");
         buttonEditar.id = item.id
-        buttonEditar.classList = "buttonEditar"
+        buttonEditar.classList = "buttonEditar btn-grad-edit"
         
         buttonEditar.addEventListener("click", () => {
             let algo2 = parseInt(document.getElementById(buttonEditar.id).id)
             let idEditar = objPersona.findIndex(item => item.id == algo2)
-            console.log(algo2)
+            let objetoEditar = objPersona[idEditar]
+            // console.log(algo2)
             let changue = prompt(`Ingresa para editar:
               (n) para Nombre
               (e) para Edad
@@ -105,32 +105,32 @@ let inicioPersonas = () => {
               (h) para Hobby
               (p) para Pais de residencia
             `)
-            let edit = prompt("Favor de introducir el dato nuevo")
-            objetoEditar = objPersona[idEditar]
-           
+            
+            
             switch (changue) {
                 case "n":
-                    objetoEditar.nombre = edit
+                    objetoEditar.nombre = prompt("Favor de introducir el dato nuevo")
                     break;
                 case "e":
-                    objetoEditar.edad = edit
+                    objetoEditar.edad = prompt("Favor de introducir el dato nuevo")
                     break;
                 case "c":
-                    objetoEditar.colorCabello= edit
+                    objetoEditar.colorCabello= prompt("Favor de introducir el dato nuevo")
                     break;
                 case "o":
-                    objetoEditar.oficio = edit
+                    objetoEditar.oficio = prompt("Favor de introducir el dato nuevo")
                     break;
                 case "m":
-                    objetoEditar.mascotaFavorita = edit
+                    objetoEditar.mascotaFavorita = prompt("Favor de introducir el dato nuevo")
                     break;
                 case "h":
-                    objetoEditar.hobby = edit
+                    objetoEditar.hobby =prompt("Favor de introducir el dato nuevo")
                     break;
                 case "p":
-                    objetoEditar.pais = edit
+                    objetoEditar.pais = prompt("Favor de introducir el dato nuevo")
                     break;
                 default:
+                    alert("No encontrado")
                     break;
             }
             recargar()
@@ -167,3 +167,20 @@ let inicioPersonas = () => {
 }
 
 inicioPersonas()
+window.onload = function() {
+    Particles.init({
+        selector: '.background',
+        speed: 1,
+      color: ['#DA0463', '#404B69', '#DBEDF3'],
+      connectParticles: true,
+      maxParticles: 90,
+      responsive: [{
+        breakpoint: 800,
+        options: {
+            color: '#00C9B1',
+            maxParticles: 50,
+            connectParticles: true
+    }
+  }]
+    });
+  };

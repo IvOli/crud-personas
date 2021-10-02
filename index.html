@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>To-Do</title>
+    <title>Crud de personas</title>
 </head>
 <body>
     <div class="container">
         <div class="formulario">
             <h1>Crud de Personas</h1>
-            <form action="" onsubmit="dataIn(event)" id="form">
-                <input type="text" placeholder="  Nombre" id="nombre" required>
-                <input type="number" placeholder="  Edad" id="edad">
-                <input type="text" placeholder="  Color de cabello" id="cabello">
-                <input type="text" placeholder="  Oficio" id="oficio">
-                <input type="text" placeholder="  Mascota favorita" id="mascota">
-                <input type="text" placeholder="  Hobby" id="hobby">
-                <input type="text" placeholder="  Pais de residencia" id="pais">
-                <input type="submit" value="Agregar" onclick="intruducirDatos(event)" class="submit">
+            <form action="" id="form">
+                <input type="text" placeholder="Nombre" id="nombre" required>
+                <input type="number" placeholder="Edad" id="edad">
+                <input type="text" placeholder="Color de cabello" id="cabello">
+                <input type="text" placeholder="Oficio" id="oficio">
+                <input type="text" placeholder="Mascota favorita" id="mascota">
+                <input type="text" placeholder="Hobby" id="hobby">
+                <input type="text" placeholder="Pais de residencia" id="pais">
+                <input type="submit"  onclick="intruducirDatos(event)" style="display:none;">
+                <img src="icons/Plus.ico" alt="" onclick="intruducirDatos(event)" class="submit">
                 
             </form>
         </div>
@@ -41,7 +42,9 @@
     
 
        
-
+    
     <script src="script.js"></script>
+    <canvas class="background"></canvas>
+  <script src="particles.js-master/dist/particles.min.js"></script>
 </body>
 </html>
