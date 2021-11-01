@@ -12,7 +12,7 @@ let intruducirDatos= (e)=>{
     let mascota = document.getElementById("mascota").value;
     let hobby = document.getElementById("hobby").value;
     let pais = document.getElementById("pais").value;
-    
+
     if(nombre =='' || edad == '' || cabello == '' || oficio == '' || mascota == '' || hobby == '' || pais == ''){
         alert("No puedes dejar campos vacios")
     }else{
@@ -26,18 +26,14 @@ let intruducirDatos= (e)=>{
             hobby: hobby, 
             pais: pais
         }
-        
         objPersona.push(dic)
-        
         // console.log(objPersona);
-        
         recargar()
 
         //Eliminar los datos del formulario
         let formDatos = document.getElementById("form");
         formDatos.reset();
     }
-    
 }
 
 
@@ -48,8 +44,6 @@ let recargar = () => {
     // setTimeout(function(){
     //     inicioPersonas()
     // }, 3000)
-    
-    
 }
 
 let inicioPersonas = () => {
@@ -85,12 +79,11 @@ let inicioPersonas = () => {
             recargar()
         }
         }, false);
-        
-        
+
         let buttonEditar = document.createElement("button");
         buttonEditar.id = item.id
         buttonEditar.classList = "buttonEditar btn-grad-edit"
-        
+
         buttonEditar.addEventListener("click", () => {
             let algo2 = parseInt(document.getElementById(buttonEditar.id).id)
             let idEditar = objPersona.findIndex(item => item.id == algo2)
@@ -105,8 +98,7 @@ let inicioPersonas = () => {
               (h) para Hobby
               (p) para Pais de residencia
             `)
-            
-            
+
             switch (changue) {
                 case "n":
                     objetoEditar.nombre = prompt("Favor de introducir el dato nuevo")
@@ -138,7 +130,6 @@ let inicioPersonas = () => {
 
             }, false);
 
-        
         tdNombre.innerHTML = item.nombre
         tdEdad.innerHTML = item.edad
         tdColorCabello.innerHTML = item.colorCabello
@@ -148,7 +139,7 @@ let inicioPersonas = () => {
         tdPais.innerHTML = item.pais
         buttonCancelar.innerHTML = "❌"
         buttonEditar.innerHTML = "🖊️"
-    
+
         document.getElementById(newElement.id).appendChild(tdNombre);
         document.getElementById(newElement.id).appendChild(tdEdad);
         document.getElementById(newElement.id).appendChild(tdColorCabello);
@@ -161,26 +152,53 @@ let inicioPersonas = () => {
         if(item.id > 0){ 
             document.getElementById(tdAccion.id).appendChild(buttonCancelar);
         }
-        
-                
     })
 }
 
 inicioPersonas()
+
+
+
 window.onload = function() {
     Particles.init({
         selector: '.background',
         speed: 1,
-      color: ['#DA0463', '#404B69', '#DBEDF3'],
-      connectParticles: true,
-      maxParticles: 90,
-      responsive: [{
+        color: ['#DA0463', '#404B69', '#DBEDF3'],
+        connectParticles: true,
+        maxParticles: 90,
+        responsive: [{
         breakpoint: 800,
         options: {
             color: '#00C9B1',
             maxParticles: 50,
             connectParticles: true
     }
-  }]
+}]
     });
-  };
+};
+
+const searchName = () => {    
+    let namae = document.getElementById("search").value
+    console.log(namae)
+    let siesta
+    let id
+    objPersona.forEach(item =>{ 
+
+        if (item.nombre.toLowerCase() === namae.toLowerCase()){
+            siesta = true
+            id = item.id
+            console.log(siesta)
+        }
+        } )
+
+
+
+        if (siesta){
+            document.getElementById(id).style.background = "blue"
+            setTimeout(function(){ document.getElementById(id).style.background = "none";}, 3000);
+        }else{
+                alert(`${namae} no se encuentra en la base de datos`)
+        }
+}
+
+

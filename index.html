@@ -21,8 +21,12 @@
                 <input type="text" placeholder="Pais de residencia" id="pais">
                 <input type="submit"  onclick="intruducirDatos(event)" style="display:none;">
                 <img src="icons/Plus.ico" alt="" onclick="intruducirDatos(event)" class="submit">
-                
             </form>
+        </div>
+        <div>
+        <div class="search">
+            <input type="text" placeholder="Buscar por nombre" id="search">
+            <button type="submit"  onclick="searchName()" class="submit lupa">🔎</button>
         </div>
         <table id="tablaGrande">
             <thead>
@@ -39,10 +43,10 @@
             </thead>
         </table>   
     </div>
+    </div>
     
 
        
-    
     <script src="script.js"></script>
     <canvas class="background"></canvas>
   <script src="particles.js-master/dist/particles.min.js"></script>
